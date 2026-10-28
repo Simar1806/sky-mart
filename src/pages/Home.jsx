@@ -10,7 +10,7 @@ import ProductCard from '../components/ProductCard';
 import SkeletonCard from '../components/SkeletonCard';
 import ProductModal from '../components/ProductModal';
 
-const PAGE = 24;
+const PAGE = typeof window !== 'undefined' && window.innerWidth < 640 ? 12 : 24;
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -101,7 +101,7 @@ export default function Home() {
           <input placeholder="Search products, brands…" value={filters.search} onChange={(e) => setFilters((f) => ({ ...f, search: e.target.value }))} />
           {filters.search && <button onClick={() => setFilters((f) => ({ ...f, search: '' }))}><FiX /></button>}
         </div>
-        <button className="btn btn-ghost mobile-only" onClick={() => setDrawer(true)}><FiSliders /> Filters</button>
+        <button className="btn btn-ghost mobile-only filter-btn" onClick={() => setDrawer(true)} aria-label="Filters"><FiSliders /><span>Filters</span></button>
       </div>
 
       <div className="shop">

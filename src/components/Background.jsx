@@ -13,7 +13,7 @@ export default function Background() {
       <div className="sky-orb orb-1" />
       <div className="sky-orb orb-2" />
       <div className="sky-orb orb-3" />
-      {Array.from({ length: 40 }).map((_, i) => (
+      {Array.from({ length: typeof window !== 'undefined' && window.innerWidth < 640 ? 14 : 40 }).map((_, i) => (
         <span
           key={i}
           className="star"

@@ -11,6 +11,7 @@ export default function ProductCard({ product: p, index = 0, onView }) {
   const out = p.stock === 0;
 
   const handleMove = (e) => {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     const r = e.currentTarget.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;
@@ -20,7 +21,6 @@ export default function ProductCard({ product: p, index = 0, onView }) {
 
   return (
     <motion.article
-      layout
       className="card glass"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}

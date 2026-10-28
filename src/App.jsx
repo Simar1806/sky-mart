@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import CartDrawer from './components/CartDrawer';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import MobileNav from './components/MobileNav';
 import AuthPage from './pages/AuthPage';
 import Home from './pages/Home';
 import Checkout from './pages/Checkout';
@@ -37,7 +38,8 @@ export default function App() {
     <>
       <Background />
       <Toaster
-        position="bottom-center"
+        position="top-center"
+        containerStyle={{ top: 84 }}
         toastOptions={{ className: 'toast', duration: 2200 }}
       />
       {user && <Navbar />}
@@ -55,6 +57,7 @@ export default function App() {
         </Routes>
       </main>
       {user && <Footer />}
+      {user && <MobileNav />}
       <BackToTop />
     </>
   );

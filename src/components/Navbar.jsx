@@ -53,12 +53,12 @@ export default function Navbar() {
         <NavLink to="/orders">Orders</NavLink>
       </nav>
       <div className="nav-actions">
-        <button className="icon-btn" onClick={toggle} aria-label="Toggle theme">
+        <button className="icon-btn hide-sm" onClick={toggle} aria-label="Toggle theme">
           <motion.span key={theme} initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }}>
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </motion.span>
         </button>
-        <button className="icon-btn" onClick={() => navigate('/wishlist')} aria-label="Wishlist">
+        <button className="icon-btn hide-sm" onClick={() => navigate('/wishlist')} aria-label="Wishlist">
           <FiHeart /><Badge n={wishlist.length} />
         </button>
         <button className="icon-btn cart-btn" id="cart-icon" onClick={() => setCartOpen(true)} aria-label="Cart">
@@ -67,7 +67,7 @@ export default function Navbar() {
         <div className="avatar-wrap">
           <button className="avatar" onClick={() => setMenu((m) => !m)}>
             <span>{user.name[0]?.toUpperCase()}</span>
-            <FiChevronDown />
+            <FiChevronDown className="hide-sm" />
           </button>
           <AnimatePresence>
             {menu && (

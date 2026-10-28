@@ -12,8 +12,6 @@ npm run dev
 ```
 Then open the URL Vite prints (usually http://localhost:5173).
 
-Live demo: https://simar1806.github.io/sky-mart/
-
 Demo login: `demo@skymart.com` / `demo123` (or click "Try demo account").
 
 ## Features
